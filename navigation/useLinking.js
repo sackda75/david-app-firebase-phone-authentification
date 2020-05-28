@@ -1,5 +1,5 @@
-import { useLinking } from '@react-navigation/native';
-import { Linking } from 'expo';
+import { useLinking } from '@react-navigation/native'
+import { Linking } from 'expo'
 
 export default function(containerRef) {
   return useLinking(containerRef, {
@@ -11,8 +11,8 @@ export default function(containerRef) {
           Home: 'home',
           Links: 'links',
           Settings: 'settings',
-        },
-      },
-    },
-  });
+        }
+      }
+    }
+  })
 }
