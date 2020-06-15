@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { Text, View, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { FirebaseRecaptchaVerifierModal } from 'expo-firebase-recaptcha'
 import firebase from '../Config/Firebase'
+import TouchableScale from 'react-native-touchable-scale'
 
 const PhoneNumberScreen = ({ navigation }) => {
 
@@ -28,26 +28,26 @@ const PhoneNumberScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../assets/images/image.png')} />
+      <Image style={{ width: 150, height: 150, marginBottom: 50 }} source={require('../assets/images/logo1.png')} />
       <Text style={styles.title}>
-        Connectez vous avec votre numéro de téléphone
+        Connectez-vous avec votre numéro de téléphone
       </Text>
       <TextInput
-        placeholder='Numéro de tel'
-        placeholderTextColor='white'
+        placeholder='Numéro de téléphone'
+        placeholderTextColor='#9400d3'
         style={styles.input}
         onChangeText={setPhone}
         returnKeyType='done'
         keyboardType='phone-pad'
         autoCompleteType='tel'
       />
-      <TouchableOpacity onPress={sendCode} style={styles.button}>
+      <TouchableScale onPress={sendCode} style={styles.button} activeScale={1.2}>
         {loading ? (
           <ActivityIndicator color='#87c965' />
         ) : (
-          <Text style={styles.textButton}>Envoyer</Text>
+          <Text style={styles.textButton}>Valider</Text>
         )}
-      </TouchableOpacity>
+      </TouchableScale>
       <FirebaseRecaptchaVerifierModal
         ref={recaptchaVerifier}
         firebaseConfig={firebase.app().options}
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#87c965'
+    backgroundColor: '#fff'
   },
   title: {
     textAlign: 'center',
@@ -69,29 +69,32 @@ const styles = StyleSheet.create({
     width: '60%',
     fontSize: 17,
     marginBottom: 20,
-    color: 'white',
+    color: '#9400d3',
     fontFamily: 'muli'
   },
   input: {
     width: '60%',
-    color: 'white',
+    color: '#9400d3',
     borderRadius: 10,
     padding: 15,
     borderWidth: 1,
-    borderColor: 'white',
+    borderColor: '#9400d3',
     fontFamily: 'muli',
     marginBottom: 20
   },
   button: {
-    width: '50%',
-    backgroundColor: 'white',
+    width: 220,
+    marginTop: 20,
+    backgroundColor: '#9400d3',
     paddingHorizontal: 20,
     paddingVertical: 15,
-    borderRadius: 10
+    borderRadius: 40
   },
   textButton: {
     fontFamily: 'muli',
-    color: '#87c965'
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 })
 

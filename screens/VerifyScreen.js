@@ -1,11 +1,9 @@
 import React from 'react'
 import { Text, View, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import Modal from 'react-native-modal'
-import CustomModal from '../components/Modal'
 import firebase from '../Config/Firebase'
+import TouchableScale from 'react-native-touchable-scale'
 
-const VerifyScreen = ({ route }) => {
+const VerifyScreen = ({ route, navigation }) => {
 
   const { verificationId } = route.params
   const [visibleModal, setVisibleModal] = React.useState(false)
@@ -25,6 +23,7 @@ const VerifyScreen = ({ route }) => {
         if (result.user) {
           setLoading(false)
           displayModal()
+          navigation.navigate('HomeApp')
         }
       })
       .catch((e) => console.log(e))
@@ -36,22 +35,8 @@ const VerifyScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Modal
-        isVisible={visibleModal}
-        backdropColor='#87c965'
-        backdropOpacity={1}
-        style={styles.modal}
-        animationIn={'zoomInDown'}
-        animationOut={'zoomOutUp'}
-        animationInTiming={1000}
-        animationOutTiming={1000}
-        backdropTransitionInTiming={1000}
-        backdropTransitionOutTiming={1000}
-      >
-        <CustomModal />
-      </Modal>
       <Image source={require('../assets/images/image.png')} />
-      <Text style={styles.title}>Entrer le code reçu par sms</Text>
+      <Text style={styles.title}>Entrer le code reçu par SMS</Text>
       <TextInput
         placeholder='Code'
         placeholderTextColor='white'
@@ -60,13 +45,13 @@ const VerifyScreen = ({ route }) => {
         returnKeyType='done'
         keyboardType='phone-pad'
       />
-      <TouchableOpacity onPress={verifyCode} style={styles.button}>
+      <TouchableScale onPress={verifyCode} style={styles.button} activeScale={1.2}>
         {loading ? (
           <ActivityIndicator color='#87c965' />
         ) : (
           <Text style={styles.textButton}>Valider</Text>
         )}
-      </TouchableOpacity>
+      </TouchableScale>
     </View>
   )
 }
@@ -76,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#87c965'
+    backgroundColor: '#9400d3'
   },
   title: {
     textAlign: 'center',
@@ -98,15 +83,18 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   button: {
-    width: '50%',
+    width: 220,
+    marginTop: 20,
     backgroundColor: 'white',
     paddingHorizontal: 20,
     paddingVertical: 15,
-    borderRadius: 10
+    borderRadius: 40
   },
   textButton: {
     fontFamily: 'muli',
-    color: '#87c965'
+    color: '#9400d3',
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 })
 
