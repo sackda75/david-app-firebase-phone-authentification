@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { SplashScreen } from 'expo'
 import * as Font from 'expo-font'
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
 
+import { SplashScreen } from 'expo'
 import { NavigationContainer } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons'
 
 import PhoneNumberScreen from './screens/PhoneNumberScreen'
 import VerifyScreen from './screens/VerifyScreen'

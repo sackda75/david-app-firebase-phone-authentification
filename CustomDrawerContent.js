@@ -1,10 +1,9 @@
 import React from 'react'
-import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, Image } from 'react-native'
+
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Text, View, SafeAreaView, TouchableOpacity, ScrollView, Image } from 'react-native'
 
 function CustomDrawerContent({ navigation }) {
-
-
 
       return (
 

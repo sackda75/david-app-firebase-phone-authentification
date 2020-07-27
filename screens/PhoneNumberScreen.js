@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
-import { Text, View, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
-import { FirebaseRecaptchaVerifierModal } from 'expo-firebase-recaptcha'
 import firebase from '../Config/Firebase'
 import TouchableScale from 'react-native-touchable-scale'
+
+import { FirebaseRecaptchaVerifierModal } from 'expo-firebase-recaptcha'
+import { Text, View, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
 
 const PhoneNumberScreen = ({ navigation }) => {
 

@@ -1,8 +1,10 @@
 import React from 'react'
-import { Text, View, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
-import CustomHeader from '../CustomHeader'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
 import email from 'react-native-email'
+
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Text, View, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
+
+import CustomHeader from '../CustomHeader'
 
 // <Button title="Send Mail" onPress={handleEmail} />
 

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "david-app-auth",
-    "slug": "phoneAuth",
+    "name": "david-app-firebase-phone-authentification",
+    "slug": "david-app-firebase-phone-authentification",
     "platforms": [
       "ios",
       "android",

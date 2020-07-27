@@ -1,7 +1,8 @@
 import React from 'react'
-import { Text, View, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
 import firebase from '../Config/Firebase'
 import TouchableScale from 'react-native-touchable-scale'
+
+import { Text, View, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
 
 const VerifyScreen = ({ route, navigation }) => {
 
