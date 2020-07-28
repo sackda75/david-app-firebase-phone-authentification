@@ -4,4 +4,4 @@ Mon CV sous forme d'une app web mobile avec React Native, React Navigation 5 et 
 2. Ouvrir l'application
 3. Appuyer sur "Scan QR Code" 
 
-![alt text](https://i.imgur.com/kPAbBJC.png)
+![alt text](https://i.imgur.com/M33PP86.png)
